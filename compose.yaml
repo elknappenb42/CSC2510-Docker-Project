@@ -4,11 +4,18 @@ services:
 
     # TODO: 
     # define image (if our container is named postgres_db... i wonder... use 16 as the version.)
+    image: postgres_db:16
     # define ports (postgres default port is 5432)
+    ports:
+      - "5432"
     # define environment (POSTGRES_USER, POSTGRES_PASSWORD, and POSTGRES_DB (can be found in the code)
+    
     # create and attach a volume to /var/lib/postgresql/data
-
+    volumes:
+      - volume:/var/lib/postgresql/data
     # given: healthcheck
+    depends_on:
+      - healthcheck
     # basically just checks that postgres is up and ready
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
