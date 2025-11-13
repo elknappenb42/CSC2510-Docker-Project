@@ -52,8 +52,13 @@ services:
 
     # TODO: 
       # set our app to run on port 8080
+      ports:
+       - "8080:8080"
 
 
 # TODO: 
 # define a volume at the highest level
 # should be same name as the volume you defined for DB
+      volumes:
+        -  volume:/var/lib/postgresql/data
+
