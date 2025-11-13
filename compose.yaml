@@ -43,12 +43,12 @@ services:
       #, DB_PORT, DB_USER, DB_PASSWORD, DB_NAME, 
       # and (this container's) PORT 8080)
     envirnonment:
-      - DB_HOST=localhost
-      - DB_PORT=5432
-      - DB_USER=postgres
-      - DB_PASSWORD=postgres
-      - DB_NAME=postgres
-      - PORT=8080
+      DB_HOST: localhost
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_NAME: postgres
+      PORT: 8080
 
     # TODO: 
       # set our app to run on port 8080
